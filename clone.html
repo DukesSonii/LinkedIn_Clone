@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LinkedIn Clone</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="data:image/jpeg;base64,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"
+                alt="logo" style="float: left; width: 80px; margin-right: 20px;">
+            <div class="logo">
+                <h1>LinkedIn</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Connections</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Messages</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="hero">
+        <div class="container">
+            <h2>Welcome to your professional community</h2>
+            <p>Find the right job or internship for you.</p>
+            <a href="#" class="btn">Sign Up Now</a>
+        </div>
+    </div>
+
+    <div id="profile">
+        <img src="photo.jpg" alt="Profile Picture">
+        <div>
+            <h2>Duke Soni</h2>
+            <p>Job Title: Machine Learning Engineer </p>
+            <p>Education: Currently enrolled in a Bachelor of Technology degree program in Computer Science with 
+                specialization in Artificial Intelligence and Machine Learning</p>
+        </div>
+    </div>
+    <div id="sidebar">
+        <h2>My Network</h2>
+        <div class="network-links">
+            <a href="#">Connections</a>
+            <a href="#">Add Connections</a>
+            <a href="#">People You May Know</a>
+        </div>
+
+        <h2>Jobs</h2>
+        <div class="job-links">
+            <a href="#">Jobs</a>
+            <a href="#">Post a Job</a>
+            <a href="#">Saved Jobs</a>
+        </div>
+
+        <h2>Interests</h2>
+        <div class="interest-links">
+            <a href="#">Groups</a>
+            <a href="#">Learning</a>
+            <a href="#">News</a>
+            <a href="#">Influencers</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="activity-feed">
+            <h3>Recent Activity</h3>
+            <ul>
+                <li>
+                    <p>Dikshant Prajapat added a new project</p>
+                    <small>2 hours ago</small>
+                </li>
+                <li>
+                    <p>Daksh Khurana liked a post</p>
+                    <small>3 hours ago</small>
+                </li>
+                <li>
+                    <p>Vatsal commented on a post</p>
+                    <small>7 hours ago</small>
+                </li>
+                <li>
+                    <p>anish  posted a new post</p>
+                    <small>10 hours ago</small>
+                </li>
+                <li>
+                    <p>Divyanshu viewed your profile</p>
+                    <small>12 hours ago</small>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="recommended-posts">
+            <h3>Recommended Posts</h3>
+            <div class="post-container">
+                <div class="post">
+                    <img src="post-image1.jpeg" alt="Post 1">
+                    <h3>True Leadership</h3>
+                    <p>The Boss, who fights with Management for his team without thining about his/her career, is a true
+                        Leader</p>
+                </div>
+                <div class="post">
+                    <img src="picture2.jpeg" alt="Post 2">
+                    <h3>ImmingCanada Immigration Consulting Firm</h3>
+                    <p>Canada Needs Professionals Like You!
+                        The Express Entry program is a way for you to immigrate to Canada as fast as 6 months. Job offer is not required.</p>
+                </div>
+                <div class="post">
+                    <img src="5png.jpeg" alt="Post 3">
+                    <h3>Achieving Your Goals together</h3>
+                    <p>My goal is your success. Lets make it together. Let's work hand-in-hand to create a plan that maximizes your potential and sets you up for success</p>
+                </div>
+            </div>
+        </div>
+        <div class="suggested-connections">
+            <h3>Suggested Connections</h3>
+            <ul>
+                <li>
+                    <img src="tate.jpeg" alt="User Image">
+                    <div>
+                        <h4>Andrew Tate</h4>
+                        <p>Founder and CEO of Cobratate</p>
+                        <div class="button-container">
+                            <button class="btn accept-btn"><a href="#">Follow</a></button>
+                            <button class="btn ignore-btn"><a href="#">Ignore</a></button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="dikshant.jpeg" alt="User Image">
+                    <div>
+                        <h4>Dikshant Prajapat</h4>
+                        <p>Data Scientist at McAfee | Banglore</p>
+                        <div class="button-container">
+                            <button class="btn accept-btn"><a href="#">Connect</a></button>
+                            <button class="btn ignore-btn"><a href="#">Remove</a></button>
+                        </div>    
+                    </div>
+                </li>
+                <li>
+                    <img src="daksh.jpeg" alt="User Image">
+                    <div>
+                        <h4>Daksh Khurana</h4>
+                        <p>Certified Ethical Hacker (CEH) | L.A, United States of America</p>
+                        <div class="button-container">
+                            <button class="btn accept-btn"><a href="#">Connect</a></button>
+                            <button class="btn ignore-btn"><a href="#">Ignore</a></button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img src="par.jpeg" alt="User Image">
+                    <div>
+                        <h4>Divyanshu Parihar</h4>
+                        <p> CFO at Taliban Industries | Taliban</p>
+                        <div class="button-container">
+                            <button class="btn accept-btn"><a href="#">Connect</a></button>
+                            <button class="btn ignore-btn"><a href="#">Ignore</a></button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="newsfeed">
+        <div class="post">
+            <div class="post-header">
+                <img src="cat.png" alt="Profile Picture">
+                <div class="post-info">
+                    <h3>Walmart</h3>
+                    <p>2 hours ago</p>
+                </div>
+            </div>
+            <img src="https://media.licdn.com/dms/image/D5622AQHnzsHHxrKjcg/feedshare-shrink_800/0/1681860711042?e=1684972800&v=beta&t=QoiqC6pflMQ0GuRnAP9jtqysh-ri6e81vR8I9czXLvU"
+                alt="">
+            <p>We just concluded our inaugural Walmart de México y Centroamérica Open Call! More than 400 entrepreneurs
+                were invited for the chance to put their Mexican-made, sourced, assembled, or grown products on our
+                shelves in Mexico at Walmart, Sam’s Club or online.
+
+                Excited to see how Open Call has expanded to Walmart Mexico to strengthen manufacturing. By sourcing
+                locally, we can help support small businesses, create jobs, and provide innovation and value to our
+                customers.
+
+                Special thanks to Marco Vigato, Guilherme Loureiro, Dolores Fernandez Lobbe, and the entire Walmart
+                Mexico team.</p>
+            <div class="post-actions">
+                <button class="like-button">Like </button>
+                <button class="comment-button">Comment</button>
+                <button class="share-button">Share</button>
+            </div>
+        </div>
+        <div class="post">
+            <div class="post-header">
+                <img src="company-logo.jpg" alt="Company Logo">
+                <div class="post-info">
+                    <h3>ABC Company</h3>
+                    <p>1 day ago</p>
+                </div>
+            </div>
+            <img src="https://media.licdn.com/dms/image/D5622AQErBfBXPKQ5Jw/feedshare-shrink_800/0/1681860711127?e=1684972800&v=beta&t=AupJeGRFCx1lZgE3v-PMuOGYZKUYIqtEPq3XbfYFF90"
+                width="200px" alt="">
+            <p>I’m celebrating Women’s History month by spotlighting Walmart’s investment in women-owned businesses.
+
+                • Last year (FY23), Walmart’s Certified Walmart U.S. Women-Owned Business Enterprise spend reached $3.8
+                billion with over 1000 women-owned businesses in goods for resale, professional services and goods not
+                for resale. That incredible momentum builds on the excellent foundation Walmart set over the past years
+                to lead on women-owned business inclusion.
+                • In 2015 Walmart was instrumental, with the Women's Business Enterprise National Council (WBENC), in
+                supporting the design of the Women-Owned logo and in featuring products with the logo. I see this logo
+                on so many products as I shop at my local Walmart and on Walmart.com, and it gives me such a sense of
+                pride.
+                • Diverse suppliers have unique needs. That’s why, in April 2021, we partnered with C2FO, one of the
+                world’s largest online platforms for working capital management. Bottom line, this partnership helps
+                suppliers request early payments at reduced rates, enabling growth. </p>
+            <div class="post-actions">
+                <button class="like-button">Like</button>
+                <button class="comment-button">Comment</button>
+                <button class="share-button">Share</button>
+            </div>
+        </div>
+
+        <div class="post">
+            <div class="post-header">
+                <img src="sale.jpeg" alt="Company Logo">
+                <div class="post-info">
+                    <h3>SalesForce</h3>
+                    <p>1 day ago</p>
+                </div>
+            </div>
+            <img src="https://media.licdn.com/dms/image/sync/D4E10AQEtNH9Ur77bYA/image-shrink_800/0/1682354324687?e=1682971200&v=beta&t=eEr0gj0YZW2WXwSfqrLxXKjSk3-M6kEyY4LH4Mm9VVo"
+                width="500px" alt="">
+            <p>Woah, Astro! You okay, bud? 😅 Generative artificial intelligence isn't perfect yet — clearly. But each
+                day, it progresses towards more convincingly human-made results.
+
+                Discover the world of GPT, #EinsteinGPT, and the future of AI in CRM on Trailhead:
+                https://sforce.co/43J6w3n </p>
+            <div class="post-actions">
+                <button class="like-button">Like</button>
+                <button class="comment-button">Comment</button>
+                <button class="share-button">Share</button>
+            </div>
+        </div>
+
+        <div class="post">
+            <div class="post-header">
+                <img src="ind.jpeg" alt="Company Logo">
+                <div class="post-info">
+                    <h3>UMANDRA</h3>
+                    <p>10 day ago</p>
+                </div>
+            </div>
+            <img src="https://th.bing.com/th/id/OIP.sPmmDalBfbytzRITFAH3PQHaI7?w=196&h=237&c=7&r=0&o=5&dpr=1.1&pid=1.7"
+                width="500px" alt="">
+            <p>One can be called successful if they have achieved their desired goals. For some people, being successful
+                means being rich. But being successful is even more than being rich. When you achieve what you want, it
+                gives you immense pleasure, and that is incomparable with being rich. To be successful in any aspect of
+                life, one needs to have strong dedication and work hard. Opportunities will come and go, but you must
+                decide the path to success. To achieve something,
+                you will have to cross the hurdles. It would help if you crossed the difficulties with confidence and
+                never gave up. If you give up, then all your efforts become useless. </p>
+            <div class="post-actions">
+                <button class="like-button">Like</button>
+                <button class="comment-button">Comment</button>
+                <button class="share-button">Share</button>
+            </div>
+        </div>
+        <div class="post">
+            <div class="post-header">
+                <img src="g.jpeg" alt="Company Logo">
+                <div class="post-info">
+                    <h3>Google</h3>
+                    <p>10 day ago</p>
+                </div>
+            </div>
+            <img src=https://media.licdn.com/dms/image/C4E22AQFyA-6ovrP3NA/feedshare-shrink_800/0/1668441602028?e=1684972800&v=beta&t=VzwD_hzoG7MwWGqBHPBkX35wMd4iufMQkz0pwB2ya9E
+                width="500px" alt="">
+            <p>AfroTech 2022 — the largest gathering of Black technologists in the United States — has officially kicked off in Austin, Texas! Throughout the week, thousands of Black engineers, venture capitalists, students, recruiters, and more will gather to exchange ideas and build community. Given the conference’s focus on professional development, we spoke with Black leaders across Google to hear what advice they have for our audience — both those attending AfroTech and those following from home. Swipe through for their words of wisdom!</p>
+            <div class="post-actions">
+                <button class="like-button">Like</button>
+                <button class="comment-button">Comment</button>
+                <button class="share-button">Share</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="job-postings">
+        <h2>Job Postings</h2>
+        <div class="search-bar">
+            <input type="text" placeholder="Job-title Keywords, or company">
+          </div>
+          <div class="sort-by">
+            <label for="sort">Sort By:</label>
+            <select id="sort">
+              <option value="recent">Most Recent</option>
+              <option value="recent">Salary (High to Low)</option>
+              <option value="salary">Salary (Low to High)</option>
+              <option value="recent">Date posted (old to new)</option>
+              <option value="recent">Date posted (new to old)</option>
+              <option value="location">Location (A-Z)</option>
+            </select>
+          </div>
+        <div class="job-posting">
+          <h3>Data Science Intern</h3>
+          <p>Euronox Inf Solutions Private Limited </p>
+          <p>Location: Chennai, Tamil Nadu</p>
+          <p>Salary: Rs.15000 per month</p>
+          <p>Job Type: Full-time</p>
+          <button>Apply Now</button>
+        </div>
+            <hr>
+        <div class="job-posting">
+          <h3>Python Developer Intern</h3>
+          <p>Exciever Projects Private Limited</p>
+          <p>Location: Chandigarh,Chandigarh</p>
+          <p>Salary: Rs.18000 per month</p>
+          <p>Job Type: Part-time</p>
+          <button>Apply Now</button>
+        </div>
+        <hr>
+
+        <div class="job-posting">
+          <h3>Software Engineer</h3>
+          <p>Maersk Private Limited</p>
+          <p>Location: Pune, Maharashtra</p>
+          <p>Salary: Rs.25000 per month</p>
+          <p>Job Type: Full-time</p>
+          <button>Apply Now</button>
+        </div>
+        <hr>
+
+        <div class="pagination">
+            <a href="#" class="prev">Prev</a>
+            <a href="#" class="page active">1</a>
+            <a href="#" class="page">2</a>
+            <a href="#" class="page">3</a>
+            <a href="#" class="page">4</a>
+            <a href="#" class="next">Next</a>
+          </div>
+      </div>
+      
+
+
+
+      <div class="messaging-container">
+        <h3>Messages</h3>
+        <div class="message-list">
+          <div class="message">
+            <div class="message-header">
+              <h4>Shane Pacman</h4>
+              <small>2 hours ago</small>
+            </div>
+            <div class="message-body">
+              <p>I have heard you were in Madrid last week. Have you visited Marios restaurant in the center? The last time I was there, paella was just awesome.</p>
+            </div>
+          </div>
+          <div class="message">
+            <div class="message-header">
+              <h4>Diu Jangid</h4>
+              <small>3 hours ago</small>
+            </div>
+            <div class="message-body">
+              <p>Do you have a family tradition to cook together or you like staying alone in the kitchen? </p>
+            </div>
+          </div>
+          <div class="message">
+            <div class="message-header">
+              <h4>Lucifer</h4>
+              <small>1 day ago</small>
+            </div>
+            <div class="message-body">
+              <p>I didn’t like the whole culmination part, but the beginning was strong! And what part in {movie} did you like? </p>
+            </div>
+          </div>
+          <div class="message">
+            <div class="message-header">
+              <h4>Joya</h4>
+              <small>1 day ago</small>
+            </div>
+            <div class="message-body">
+              <p>It was pretty good! I went on a hike with some friends and then spent Sunday relaxing at home. How about you?</p>
+              <p>I'm more of a non-fiction reader myself, but I've been trying to branch out. Have you read any good non-fiction books lately?</p>
+            </div>
+          </div>
+
+          <div class="message">
+            <div class="message-header">
+              <h4>Jack</h4>
+              <small>2 days ago</small>
+            </div>
+            <div class="message-body">
+                <p>Hey Emily, yeah it has been a while! I have been doing pretty well, just staying busy with work and trying to keep up with some hobbies on the side. How about you?</p>
+                <p></p>
+            </div>
+          </div>
+          <div class="message">
+            <div class="message-header">
+              <h4>Sarah</h4>
+              <small>1 day ago</small>
+            </div>
+            <div class="message-body">
+              <p>Well, I have been feeling really stuck in my career lately. I've been at the same job for years now and I feel like I'm not growing or learning anymore. I know I need to make a change, but I'm not sure what to do.</p>
+                <p>I am not even sure what I want to do next. I've been thinking about going back to school or maybe trying to start my own business, but I don't know if either of those things is really right for me.</p>
+            </div>
+          </div>
+
+        </div>
+        <form class="message-form">
+          <textarea placeholder="Type your message here"></textarea>
+          <div class="message-form-actions">
+            <button class="btn btn-secondary">Attach File</button>
+            <button type="submit" class="btn btn-primary">Send</button>
+          </div>
+        </form>
+      </div>
+      
+
+      
+
+        <!-- Recommendation container*-->
+        <div class="recommendations-container">
+            <h3>Recommendations</h3>
+            <div class="recommendation">
+              <div class="recommendation-header">
+                <img src="diu.jpeg.jpg" alt="User Image">
+                <div>
+                  <h4>Divanshu Jangid</h4>
+                  <small>Finance Manager at XYZ Corp.</small>
+                </div>
+              </div>
+              <div class="recommendation-body">
+                <p>Divanshu is an exceptional manager with a wealth of experience in managing teams and delivering high-quality results.
+                     He has a deep understanding of management principles and is skilled in leading diverse teams towards a common goal.</p>
+                     <p>Strongly Endrosed</p>
+
+                <div class="rating">
+                  <input type="radio" id="star5" name="rating" value="5">
+                  <label for="star5" title="5 stars"></label>
+                  <input type="radio" id="star4" name="rating" value="4">
+                  <label for="star4" title="4 stars"></label>
+                  <input type="radio" id="star3" name="rating" value="3">
+                  <label for="star3" title="3 stars"></label>
+                  <input type="radio" id="star2" name="rating" value="2">
+                  <label for="star2" title="2 stars"></label>
+                  <input type="radio" id="star1" name="rating" value="1">
+                  <label for="star1" title="1 star"></label>
+                </div>
+              </div>
+            </div>
+            <div class="recommendation">
+              <div class="recommendation-header">
+                <img src="dikshant.jpeg" alt="User Image">
+                <div>
+                  <h4>Dikshant Prajapat</h4>
+                  <small>Machine Learning Intern at XYZ</small>
+                </div>
+              </div>
+
+              <div class="recommendation-body">
+                <p>I highly recommend Dikshant Prajapat for any machine learning internship. Their understanding of algorithms and their ability to apply them to real-world problems is impressive.
+                    During their time with us, [intern's name] showed great proficiency in coding and a deep understanding of machine learning techniques. They were able to develop and execute complex models with ease</p>
+                <p>Highly recommended!</p>
+                <div class="rating">
+                  <input type="radio" id="star5" name="rating" value="5">
+                  <label for="star5" title="5 stars"></label>
+                  <input type="radio" id="star4" name="rating" value="4">
+                  <label for="star4" title="4 stars"></label>
+                  <input type="radio" id="star3" name="rating" value="3">
+                  <label for="star3" title="3 stars"></label>
+                  <input type="radio" id="star2" name="rating" value="2">
+                  <label for="star2" title="2 stars"></label>
+                  <input type="radio" id="star1" name="rating" value="1">
+                  <label for="star1" title="1 star"></label>
+                </div>
+              </div>
+            </div>
+            <form class="recommendation-form">
+              <h4>Write a recommendation for:</h4>
+              <select>
+                <option value="John Doe">Dikshant Prajapat</option>
+                <option value="Jane Smith">Duke Soni</option>
+                <option value="Jane Smith">Divanshu Jangid</option>
+                <option value="Jane Smith">Daksh Khurana</option>
+                <option value="Jane Smith">Amdrew Tate</option>
+                
+
+              </select>
+              <textarea placeholder="Type your recommendation here"></textarea>
+              <button type="submit">Send</button>
+            </form>
+          </div>
+          
+
+        <!-- Recommendation container ends here -->
+
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <h1>LinkedIn </h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="oa">Home</a></li>
+                        <li><a href="#" class="oa">Profile</a></li>
+                        <li><a href="#" class="oa">Connections</a></li>
+                        <li><a href="#" class="oa">Jobs</a></li>
+                        <li><a href="#" class="oa">Messages</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="legal">
+                <p>&copy; 2023 LinkedIn Clone. All rights reserved.</p>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
