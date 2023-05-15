@@ -1,2 +1,2 @@
 # LinkedIn_Clone
-Basic LinkedIn Clone using HTML and CSS
+This is an HTML & CSS project with a bit of JavaScript. It is a clone of the LinkedIn Homepage with some modifications
